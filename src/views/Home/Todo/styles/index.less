@@ -1,0 +1,184 @@
+#home-todo {
+    button, input {
+        outline: none;
+        -webkit-appearance: none;
+    }
+    button {
+        border: none;
+        background: none;
+        outline: none;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
+    .main {
+        margin: 0 auto;
+        background: #fff;
+        position: relative;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    /* AddTodo */
+    header {
+        position: relative;
+    }
+    .toggle-all {
+        position: absolute;
+        left:0;top:0;
+        z-index: 10;
+        margin-left: 10px;
+        width: 20px;
+        height: 100%;
+        text-align: center;
+        border: none;
+        background: none;
+        &:before{
+            content: '❯';
+            font-size: 18px;
+            color: #e6e6e6;
+            transform: rotate(90deg);
+        }
+        &.active:before {
+            color: #737373;
+        }
+    }
+
+    .new-todo {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        font-size: 16px;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: 1.4em;
+        border: none;
+        border: 0;
+        outline: none;
+        color: inherit;
+        padding: 8px 16px 8px 40px;
+        box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+        box-sizing: border-box;
+        font-smoothing: antialiased;
+        background: rgba(0, 0, 0, 0.003);
+        color: rgb(77, 77, 77);
+    }
+
+    /* list */
+    .todo-list li {
+        font-size: 14px;
+        position: relative;
+        border-bottom: 1px solid #ededed;
+        .toggle {
+            text-align: center;
+            width: 40px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            border: none;
+            background: none;
+            &:after {
+                content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>')
+            }
+            &:checked:after{
+                content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>')     
+            }
+        }
+        label {
+            white-space: pre-line;
+            word-break: break-all;
+            padding: 8px 60px 8px 15px;
+            margin-left: 45px;
+            width: e("calc(100% - 45px)");
+            display: block;
+            line-height: 1.2;
+            transition: color 0.4s;
+            &.completed {
+                color: #d9d9d9;
+                text-decoration: line-through;
+            }
+        }
+        
+        .destroy {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            bottom: -5px;
+            width: 40px;
+            height: 100%;
+            margin: auto 0;
+            font-size: 30px;
+            color: #af5b5e;
+            margin-bottom: 11px;
+            transition: color 0.2s ease-out;
+            &:after {
+                content: '×';
+            }
+        }
+        &:hover {
+            .destroy {
+                display: block;
+                color: #af5b5e;
+            }
+        }
+    }
+
+    /* Tabs */
+    footer {
+        color: #777;
+        padding: 10px 15px;
+        height: 40px;
+        font-size: 12px;
+        text-align: center;
+        border-top: 1px solid #e6e6e6;
+    }
+    .todo-count {
+        float: left;
+        text-align: left;
+        display: inline-block;
+        vertical-align: middle;
+        strong {
+            font-weight: 300;
+        }
+    }
+    .filters {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            display: inline;
+            a {
+                color: inherit;
+                margin: 3px 2px;
+                padding: 3px 5px;
+                text-decoration: none;
+                border: 1px solid transparent;
+                border-radius: 3px;
+                &.selected {
+                    border-color: rgba(175, 47, 47, 0.2);
+                }
+                &:hover {
+                    border-color: rgba(175, 47, 47, 0.1);
+                }
+            }
+        }
+    }
+    .clear-completed {
+        float: right;
+        line-height: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        color: #777;
+        &:hover {
+            color: #333;
+        }
+    }
+}

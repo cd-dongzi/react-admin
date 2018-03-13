@@ -1,0 +1,25 @@
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 800ms ease-in;
+}
+
+
+/**--- example styles ---**/
+.todo-list > * {
+  margin: 5px 0;
+  padding: 5px 0;
+  border-bottom:  1px solid #ccc;
+}

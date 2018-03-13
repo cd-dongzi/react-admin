@@ -1,0 +1,67 @@
+@duration: 1000ms;
+.slide-view-box {
+	width: 500px;
+	.child {
+		width: 100%;
+		height: 100px;
+        margin: 10px 0;
+        color: #fff;
+        >* {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        button {
+            width: 50px;
+            height: 30px;
+            color: #000;
+            line-height: 30px;
+            text-align: center;
+        }
+	}
+}
+
+/* left */
+.slide-left-enter {
+    opacity: 0;
+    transform: translate(-100%, 0);  
+}
+.slide-left-exit-active {
+    opacity: 0;
+    transform: translate(100%, 0);
+    transition: all @duration linear;
+}
+/* right */
+.slide-right-enter {
+    opacity: 0;
+    transform: translate(100%, 0);  
+}
+.slide-right-exit-active {
+    opacity: 0;
+    transform: translate(-100%, 0);
+    transition: all @duration linear;
+}
+/* top */
+.slide-top-enter {
+    opacity: 0;
+    transform: translate(0, 100%);  
+}
+.slide-top-exit-active {
+    opacity: 0;
+    transform: translate(0, -100%);
+    transition: all @duration linear;
+}
+/* bottom */
+.slide-bottom-enter {
+    opacity: 0;
+    transform: translate(0, -100%);  
+}
+.slide-bottom-exit-active {
+    opacity: 0;
+    transform: translate(0, 100%);
+    transition: all @duration linear;
+}
+.slide-top-enter-active, .slide-bottom-enter-active, .slide-left-enter-active, .slide-right-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all @duration linear;
+}

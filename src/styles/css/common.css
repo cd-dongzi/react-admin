@@ -1,0 +1,29 @@
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    /* 通过设置 color 来改变 SVG 的颜色/fill */
+    fill: currentColor;
+    overflow: hidden;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #f0f2f5;
+}
+#app {
+    min-width: 1000px;
+    position: relative;
+}
+* {
+    box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+
+.gutter-row {
+    padding: 20px;
+}
+.gutter-col {
+    padding: 10px;
+}

@@ -1,0 +1,41 @@
+@bg-color: #404040;
+@selected-color: #1DA57A;
+#sidebar_wrapper {
+    position: fixed;
+    left: 0; top: 0;
+    height: 100%;
+    transition: all .2s;
+    z-index: 99;
+    overflow-y: scroll;
+    .logo {
+        text-align: center;
+        padding: 10px 0;
+        .logo_github {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.65);
+            animation: github_rotate 5s linear infinite;
+        }
+    }
+    .ant-layout {
+        height: 100%;
+        background-color: @bg-color;
+        .ant-layout-sider {
+            background-color: @bg-color;
+            .ant-menu {
+                background-color: @bg-color;
+            } 
+            .ant-menu-item-selected {
+                background-color: @selected-color;
+            }
+        }
+    }
+    .ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title {
+        font-size: 12px;
+    }
+    .ant-menu-dark .ant-menu-inline.ant-menu-sub {
+        background-color: #333
+    }
+}
+@keyframes github_rotate {
+    100% { transform: rotate(360deg); }
+}
